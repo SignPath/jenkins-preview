@@ -28,7 +28,11 @@ pipeline {
           signingPolicySlug: "test-signing",
           inputArtifactPath: "build-output/unsigned/executable.exe",
           outputArtifactPath: "build-output/signed/executable.exe",
-          waitForCompletion: true
+          waitForCompletion: true,
+          serviceUnavailableTimeoutInSeconds: 60000,
+          uploadAndDownloadRequestTimeoutInSeconds: 60000,
+          waitForCompletionTimeoutInSeconds: 60000,
+          waitForPowerShellTimeoutInSeconds: 60000
         )
       }
     }
