@@ -1,0 +1,29 @@
+pipeline {
+  agent any
+  stages {
+    stage('Build') {
+      steps {
+        echo 'This would build the artifact in build-output/unsigned/executable.exe'
+      }
+    }
+    stage('Archive') {
+      steps {
+        archiveArtifacts artifacts: "build-output/unsigned/executable.exe", fingerprint: true
+      }
+    }
+    stage('Sign with SignPath') {
+      steps {
+        submitSigningRequest(
+          organizationId: "a4ad2672-2c6c-4150-ac58-bb6a2458ecd5",
+          apiTokenCredentialId: "ApiToken", 
+          trustedBuildSystemTokenCredentialId: "TbsToken",
+          projectSlug: "executable",
+          signingPolicySlug: "test-signing",
+          inputArtifactPath: "build-output/unsigned/executable.exe",
+          outputArtifactPath: "build-output/signed/executable.exe",
+          waitForCompletion: true
+        )
+      }
+    }
+  }
+}
