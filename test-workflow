@@ -17,7 +17,7 @@ pipeline {
           organizationId: "a4ad2672-2c6c-4150-ac58-bb6a2458ecd5",
           apiTokenCredentialId: "ApiToken", 
           trustedBuildSystemTokenCredentialId: "TbsToken",
-          projectSlug: "executable",
+          projectSlug: "Executable",
           signingPolicySlug: "test-signing",
           inputArtifactPath: "build-output/unsigned/executable.exe",
           outputArtifactPath: "build-output/signed/executable.exe",
