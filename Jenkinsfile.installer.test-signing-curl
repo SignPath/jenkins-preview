@@ -1,7 +1,7 @@
 pipeline {
   agent any
   environment {
-	API_TOKEN = credentials('SignPath.InstallerProject.ApiToken')
+	  API_TOKEN = credentials('SignPath.ApiToken')
   }
   stages {
     stage('Build') {
@@ -13,7 +13,7 @@ pipeline {
       steps {
 		script {
 		  output = sh(returnStdout: true, script: '''curl -i \\
-		      -H "Authorization: Bearer ${API_TOKEN}" \\
+		    -H "Authorization: Bearer ${API_TOKEN}" \\
 			  -F "ProjectSlug=installer" \\
 			  -F "SigningPolicySlug=release-signing" \\
 			  -F "Artifact=@./build-output/unsigned/installer.msi" \\

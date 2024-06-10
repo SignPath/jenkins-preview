@@ -20,7 +20,6 @@ pipeline {
           organizationId: "${params.ORGANIZATION_ID}",
           projectSlug: "executable",
           signingPolicySlug: "test-signing",
-          artifactConfigurationSlug: "initial",
           inputArtifactPath: "build-output/unsigned/executable.exe",
           outputArtifactPath: "build-output/signed/executable.exe",
           waitForCompletion: true,
