@@ -13,7 +13,7 @@ Preview sample of [Jenkins SignPath Plugin](https://github.com/jenkinsci/signpat
 
 # Demo
 
-1. Install the Jenkins CIConnector Plugin
+1. Install the [Code Signing with SignPath Jenkins Plugin](https://plugins.jenkins.io/signpath/)
 2. Add `SignPath.TrustedBuildSystemToken` (Scope: System) and `SignPath.ExecutableProject.ApiToken` (Scope: Global)
 3. Create a new Pipeline `Sign Executable (test-signing)`
   * Add a parameter `ORGANIZATION_ID` with the org id as default
