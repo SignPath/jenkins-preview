@@ -1,8 +1,5 @@
 pipeline {
   agent any
-  parameters {
-    string(name: 'API_TOKEN_CREDENTIAL_ID', defaultValue: 'SignPath.ExecutableProject.ApiToken')
-  }
   stages {
     stage('Build') {
       steps {
