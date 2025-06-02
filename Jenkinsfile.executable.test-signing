@@ -14,7 +14,7 @@ pipeline {
     stage('Sign with SignPath') {
       steps {
         submitSigningRequest(
-          apiTokenCredentialId: "${params.API_TOKEN_CREDENTIAL_ID}", 
+          apiTokenCredentialId: "SignPath.Executable.ApiToken", 
           projectSlug: "executable",
           signingPolicySlug: "test-signing",
           inputArtifactPath: "build-output/unsigned/executable.exe",
